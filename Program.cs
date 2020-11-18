@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace CSharp_Inl1
@@ -8,7 +9,10 @@ namespace CSharp_Inl1
         static int Main(string[] args)
         {
             Console.Title = "Inlämningsuppgift 1";
+
+            List<double> sumsList = new List<double>();
             double doubleResult = 0.0;
+
             while (true)
             {
 
@@ -28,6 +32,7 @@ namespace CSharp_Inl1
                 Console.WriteLine(calculation + " = " + result);
                 
                 double sum = Convert.ToDouble(result);
+                sumsList.Add(sum);
                 doubleResult += sum;
 
                 if (sum < 100)
@@ -52,7 +57,13 @@ namespace CSharp_Inl1
 
                 if (choice == "N" || choice == "NO")
                 {
-                    Console.WriteLine("Thanks for playing! The sum of all rounds: " + doubleResult + " Bye!");
+                    Console.WriteLine("Thanks for playing! The sum of all rounds total: " + doubleResult);
+                    foreach (int i in sumsList)
+                    {
+                        Console.WriteLine("Sum of individual rounds: " + i);
+                    }
+
+                    Console.WriteLine("Bye!");
                     Console.ReadLine();
                     Environment.Exit(0);
                 }
