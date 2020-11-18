@@ -59,7 +59,6 @@ namespace CSharp_Inl1
                 else
                     continue;
             }
-
         }
     }
 }
